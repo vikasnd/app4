@@ -17,22 +17,8 @@
         app:navigationIcon="@drawable/jainkosh"
         app:titleTextColor="@color/white"
         app:title=""
-        app:subtitleTextColor="@color/white">
+        app:subtitleTextColor="@color/white" />
 
-        <!-- Horizontal progress bar -->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="120dp"
-            android:layout_height="6dp"
-            android:layout_gravity="end|center"
-            android:indeterminate="false"
-            android:max="100"
-            android:visibility="gone" />
-
-    </com.google.android.material.appbar.MaterialToolbar>
-
-    <!-- Quick nav row placed below toolbar; visible only when WebView is displayed -->
     <LinearLayout
         android:id="@+id/quickNavRow"
         android:layout_width="match_parent"
@@ -112,7 +98,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="104dp">
 
-        <!-- Buttons container (centered) -->
         <ScrollView
             android:id="@+id/buttonsScroll"
             android:layout_width="match_parent"
@@ -130,7 +115,6 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp">
 
-                <!-- Larger MaterialButtons with increased text size -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnVideos"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -191,7 +175,6 @@
                     android:backgroundTint="@color/jainkosh_orange"
                     android:contentDescription="Online Class" />
 
-                <!-- Footer line -->
                 <TextView
                     android:id="@+id/footerDirected"
                     android:layout_width="match_parent"
@@ -202,15 +185,15 @@
                     android:textAlignment="center"
                     android:textColor="@color/jainkosh_orange"
                     android:textSize="14sp"/>
-
             </LinearLayout>
         </ScrollView>
 
-        <!-- WebView wrapped with SwipeRefreshLayout for pull-to-refresh -->
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:clickable="false">
 
             <WebView
                 android:id="@+id/webView"

@@ -1,4 +1,3 @@
-
 package org.jainkosh.app
 
 import android.annotation.SuppressLint
@@ -49,14 +48,15 @@ class MainActivity : AppCompatActivity() {
         swipeRefresh = findViewById(R.id.swipeRefresh)
         quickNavRow = findViewById(R.id.quickNavRow)
 
-        // If the workflow downloaded the PNG, set it as navigation icon
+        swipeRefresh.visibility = View.GONE
+        swipeRefresh.isEnabled = false
+
         try {
             topBar.setNavigationIcon(R.drawable.jainkosh)
         } catch (e: Exception) {
             // ignore if drawable not present
         }
 
-        // WebView settings
         val settings = webView.settings
         settings.javaScriptEnabled = true
         settings.domStorageEnabled = true
@@ -119,14 +119,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Top bar navigation collapses webview back to main
         topBar.setNavigationOnClickListener {
             if (webView.visibility == View.VISIBLE) {
                 restoreButtonsFromWebView()
             }
         }
 
-        // Pull to refresh reloads webview
         swipeRefresh.setOnRefreshListener {
             if (webView.visibility == View.VISIBLE) {
                 webView.reload()
@@ -144,11 +142,13 @@ class MainActivity : AppCompatActivity() {
         buttonsScroll.startAnimation(fadeOut)
         buttonsScroll.visibility = View.GONE
 
-        // show quick nav
         quickNavRow.visibility = View.VISIBLE
 
+        swipeRefresh.visibility = View.VISIBLE
+        swipeRefresh.isEnabled = true
+
         webView.visibility = View.VISIBLE
-        val fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
+        val fadeIn = AnimationUtils.loadAnimation(this, android.R_anim.fade_in)
         fadeIn.duration = 260
         webView.startAnimation(fadeIn)
 
@@ -160,6 +160,9 @@ class MainActivity : AppCompatActivity() {
         fadeOut.duration = 220
         webView.startAnimation(fadeOut)
         webView.visibility = View.GONE
+
+        swipeRefresh.visibility = View.GONE
+        swipeRefresh.isEnabled = false
 
         quickNavRow.visibility = View.GONE
 
