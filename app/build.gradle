@@ -4,9 +4,7 @@ plugins {
 }
 
 android {
-    // <<--- Add the namespace line
     namespace "org.jainkosh.app"
-
     compileSdk 34
 
     defaultConfig {
@@ -22,7 +20,6 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    // kotlinOptions belongs under android for Kotlin Android plugin
     kotlinOptions {
         jvmTarget = '17'
     }
