@@ -17,7 +17,20 @@
         app:navigationIcon="@drawable/jainkosh"
         app:titleTextColor="@color/white"
         app:title=""
-        app:subtitleTextColor="@color/white" />
+        app:subtitleTextColor="@color/white">
+
+        <!-- Horizontal progress bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="6dp"
+            android:layout_gravity="end|center"
+            android:indeterminate="false"
+            android:max="100"
+            android:visibility="gone" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <!-- Quick nav row placed below toolbar; visible only when WebView is displayed -->
     <LinearLayout

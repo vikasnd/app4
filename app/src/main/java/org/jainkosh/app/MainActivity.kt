@@ -41,16 +41,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        webView = findViewById(R.id.webView)
-        buttonsContainer = findViewById(R.id.buttonsScroll)
-        topBar = findViewById(R.id.topBar)
-        progressBar = findViewById(R.id.progressBar)
-        swipeRefresh = findViewById(R.id.swipeRefresh)
-        quickNavRow = findViewById(R.id.quickNavRow)
+                webView = findViewById<WebView>(R.id.webView)
+        buttonsContainer = findViewById<android.view.View>(R.id.buttonsScroll)
+        topBar = findViewById<MaterialToolbar>(R.id.topBar)
+        progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        swipeRefresh = findViewById<SwipeRefreshLayout>(R.id.swipeRefresh)
+        quickNavRow = findViewById<android.view.View>(R.id.quickNavRow)
 
         // Ensure toolbar uses the downloaded drawable if present
         try {
-            topBar.navigationIcon = getDrawable(R.drawable.jainkosh)
+            topBar.setNavigationIcon(R.drawable.jainkosh)
         } catch (e: Exception) {
             // ignore if drawable not found in dev environment
         }
