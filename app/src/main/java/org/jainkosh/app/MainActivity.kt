@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         swipeRefresh = findViewById(R.id.swipeRefresh)
         quickNavRow = findViewById(R.id.quickNavRow)
 
+        // Start with swipeRefresh hidden so it doesn't block buttons
         swipeRefresh.visibility = View.GONE
         swipeRefresh.isEnabled = false
 
@@ -148,7 +149,7 @@ class MainActivity : AppCompatActivity() {
         swipeRefresh.isEnabled = true
 
         webView.visibility = View.VISIBLE
-        val fadeIn = AnimationUtils.loadAnimation(this, android.R_anim.fade_in)
+        val fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
         fadeIn.duration = 260
         webView.startAnimation(fadeIn)
 
