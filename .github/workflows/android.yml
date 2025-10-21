@@ -23,6 +23,12 @@ jobs:
         with:
           gradle-version: '8.4'
 
+      - name: Download Jainkosh logo into res/drawable
+        run: |
+          mkdir -p app/src/main/res/drawable
+          curl -fsSL -o app/src/main/res/drawable/jainkosh.png https://www.jainkosh.org/w/images/6/65/Jainkosh.png || true
+          ls -l app/src/main/res/drawable || true
+
       - name: Cache Gradle dependencies
         uses: actions/cache@v4
         with:
