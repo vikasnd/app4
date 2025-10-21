@@ -17,7 +17,19 @@
         app:navigationIcon="@drawable/jainkosh"
         app:titleTextColor="@color/white"
         app:title=""
-        app:subtitleTextColor="@color/white" />
+        app:subtitleTextColor="@color/white">
+
+        <!-- Horizontal progress bar inside toolbar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="6dp"
+            android:layout_gravity="end|center"
+            android:indeterminate="false"
+            android:max="100"
+            android:visibility="gone" />
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <LinearLayout
         android:id="@+id/quickNavRow"
@@ -31,6 +43,7 @@
         android:layout_marginTop="56dp"
         android:background="@color/jainkosh_orange">
 
+        <!-- quick-nav buttons (unchanged) -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/quick_videos"
             style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -99,110 +112,4 @@
         android:layout_marginTop="104dp">
 
         <ScrollView
-            android:id="@+id/buttonsScroll"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
-
-            <LinearLayout
-                android:id="@+id/buttonsContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:paddingTop="48dp"
-                android:paddingBottom="48dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnVideos"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_marginTop="12dp"
-                    android:text="🎥  Videos"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:backgroundTint="@color/jainkosh_orange"
-                    android:contentDescription="Videos" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnAudio"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_marginTop="12dp"
-                    android:text="🎧  Audio"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:backgroundTint="@color/jainkosh_orange"
-                    android:contentDescription="Audio" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLiterature"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_marginTop="12dp"
-                    android:text="📖  Literature"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:backgroundTint="@color/jainkosh_orange"
-                    android:contentDescription="Literature" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnStudy"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_marginTop="12dp"
-                    android:text="📚  Study Material"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:backgroundTint="@color/jainkosh_orange"
-                    android:contentDescription="Study Material" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnOnlineClass"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_marginTop="12dp"
-                    android:text="🧘  Online Class"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:backgroundTint="@color/jainkosh_orange"
-                    android:contentDescription="Online Class" />
-
-                <TextView
-                    android:id="@+id/footerDirected"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="24dp"
-                    android:text="Directed by Vikas Chhabra (Jain), Indore"
-                    android:textAlignment="center"
-                    android:textColor="@color/jainkosh_orange"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-        </ScrollView>
-
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipeRefresh"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:clickable="false">
-
-            <WebView
-                android:id="@+id/webView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone" />
-
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    </FrameLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:id="@+id
