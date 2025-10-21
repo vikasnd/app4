@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.Jainkosh" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/jainkosh_orange</item>
+        <item name="android:statusBarColor">@color/jainkosh_orange</item>
+        <item name="android:navigationBarColor">@color/jainkosh_orange</item>
+    </style>
+</resources>

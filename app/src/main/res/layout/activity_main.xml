@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <!-- Top app bar with logo and menu -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/jainkosh_orange"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:navigationIcon="@drawable/ic_jainkosh_logo"
+        app:titleTextColor="@color/white"
+        app:title="" />
+
+    <FrameLayout
+        android:id="@+id/contentFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp">
+
+        <!-- Buttons container (centered) -->
+        <ScrollView
+            android:id="@+id/buttonsScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/buttonsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="48dp"
+                android:paddingBottom="48dp">
+
+                <!-- Each button is a MaterialButton with icon and text -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVideos"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="280dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:text="🎥  Videos"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/jainkosh_orange" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAudio"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="280dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:text="🎧  Audio"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/jainkosh_orange" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLiterature"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="280dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:text="📖  Literature"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/jainkosh_orange" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStudy"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="280dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:text="📚  Study Material"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/jainkosh_orange" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOnlineClass"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="280dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:text="🧘  Online Class"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/jainkosh_orange" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- WebView (hidden initially) -->
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
